@@ -6,6 +6,23 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+# db/seeds.rb voorbeeld college Le Wagon
+# require 'faker'
+
+# Creating 100 fake restaurants
+# 100.times do
+#  restaurant = Restaurant.new({
+#    name: Faker::Company.name,
+#    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+#    rating: (0..5).to_a.sample
+#  })
+#  restaurant.save
+# end
+
+
+require 'faker'
+
 15.times do
   Senior.create(
     naam: Faker::Name.first_name,
@@ -17,4 +34,3 @@ end
     voornaam: Faker::Name.first_name,
     achternaam: Faker::Name.last_name)
 end
-
