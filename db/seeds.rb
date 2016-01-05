@@ -29,8 +29,14 @@ require 'faker'
     achternaam: Faker::Name.last_name)
 end
 
-15.times do
-  Mantelzorger.create(
-    voornaam: Faker::Name.first_name,
-    achternaam: Faker::Name.last_name)
-end
+# 15.times do
+#   Mantelzorger.create(
+#     voornaam: Faker::Name.first_name,
+#     achternaam: Faker::Name.last_name)
+# end
+
+# 15.times do
+#   Ondersteuner.create(
+#     voornaam: Faker::Name.first_name,
+#     achternaam: Faker::Name.last_name)
+# end

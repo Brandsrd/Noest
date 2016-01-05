@@ -16,6 +16,19 @@ ActiveRecord::Schema.define(version: 20151211122051) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "appointments", force: :cascade do |t|
+    t.string   "datum"
+    t.string   "tijdstip_aanvang"
+    t.string   "tijdstip_vertrek"
+    t.integer  "senior_id"
+    t.integer  "ondersteuner_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "appointments", ["ondersteuner_id"], name: "index_appointments_on_ondersteuner_id", using: :btree
+  add_index "appointments", ["senior_id"], name: "index_appointments_on_senior_id", using: :btree
+
   create_table "mantelzorgers", force: :cascade do |t|
     t.string   "voornaam"
     t.string   "achternaam"
@@ -43,14 +56,6 @@ ActiveRecord::Schema.define(version: 20151211122051) do
     t.string   "beschikbaarheid"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-  end
-
-  create_table "ondersteuning", force: :cascade do |t|
-    t.string   "datum"
-    t.string   "tijdstip_aanvang"
-    t.string   "tijdstip_vertrek"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
   end
 
   create_table "seniors", force: :cascade do |t|
