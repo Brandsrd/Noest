@@ -42,5 +42,10 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'faker', '~> 1.6.1'
+  # fake info for database see db/seerds.rb
+  gem "better_errors"
+  # error processing in web browser
+  gem "binding_of_caller"
+  # for better error? see le wagon slides rails intro 1
 end
 
