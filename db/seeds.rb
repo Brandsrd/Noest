@@ -25,8 +25,10 @@ require 'faker'
 
 15.times do
   Senior.create(
-    naam: Faker::Name.first_name,
-    achternaam: Faker::Name.last_name)
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.free_email,
+    address: Faker::Address.street_address)
 end
 
 # 15.times do

@@ -17,53 +17,55 @@ ActiveRecord::Schema.define(version: 20151211122051) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.string   "datum"
-    t.string   "tijdstip_aanvang"
-    t.string   "tijdstip_vertrek"
+    t.string   "date"
+    t.string   "time_start"
+    t.string   "time_end"
     t.integer  "senior_id"
-    t.integer  "ondersteuner_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "home_assistant_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
-  add_index "appointments", ["ondersteuner_id"], name: "index_appointments_on_ondersteuner_id", using: :btree
+  add_index "appointments", ["home_assistant_id"], name: "index_appointments_on_home_assistant_id", using: :btree
   add_index "appointments", ["senior_id"], name: "index_appointments_on_senior_id", using: :btree
 
-  create_table "mantelzorgers", force: :cascade do |t|
-    t.string   "voornaam"
-    t.string   "achternaam"
+  create_table "home_assistants", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "date_of_birth"
+    t.string   "adress"
+    t.string   "telephone_number"
+    t.string   "drivers_license"
+    t.string   "passport"
+    t.string   "chamber_of_commerce_number"
+    t.string   "certifications"
+    t.string   "specialties"
+    t.string   "availability"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "informal_care_providers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email"
     t.string   "password"
-    t.text     "adres"
+    t.text     "adress"
     t.integer  "senior_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "mantelzorgers", ["senior_id"], name: "index_mantelzorgers_on_senior_id", using: :btree
-
-  create_table "ondersteuners", force: :cascade do |t|
-    t.string   "naam"
-    t.string   "achternaam"
-    t.string   "geboortedatum"
-    t.string   "adres"
-    t.string   "telefoonnummer"
-    t.string   "rijbewijs"
-    t.string   "paspoort"
-    t.string   "kvk"
-    t.string   "diploma"
-    t.string   "specialiteit"
-    t.string   "beschikbaarheid"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
+  add_index "informal_care_providers", ["senior_id"], name: "index_informal_care_providers_on_senior_id", using: :btree
 
   create_table "seniors", force: :cascade do |t|
-    t.string   "naam"
-    t.string   "achternaam"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.text     "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "mantelzorgers", "seniors"
+  add_foreign_key "informal_care_providers", "seniors"
 end

@@ -1,11 +1,11 @@
-class Mantelzorger < ActiveRecord::Base
+class InformalCareProvider < ActiveRecord::Base
 #associations
   belongs_to :senior
   has_many :seniors, through: :appointments
 
 #validations
-validates :voornaam, presence: true, length: { minimum: 2 }
-validates :achternaam, presence: true, length: { minimum: 3 }
+validates :first_name, presence: true, length: { minimum: 2 }
+validates :last_name, presence: true, length: { minimum: 3 }
 validates :email, presence: true, uniqueness: true
 
 # regex email validation later toevoegen in alle modellen?
