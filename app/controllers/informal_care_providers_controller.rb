@@ -1,0 +1,2 @@
+class InformalCareProvidersController < ApplicationController
+end

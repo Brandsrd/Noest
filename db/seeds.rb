@@ -23,13 +23,27 @@
 
 require 'faker'
 
-15.times do
+30.times do
   Senior.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.free_email,
     address: Faker::Address.street_address)
 end
+
+30.times do
+ InformalCareProviders.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.free_email,
+    password: Faker::Internet.password,
+    address: Faker::Address.street_address)
+end
+
+
+
+
+
 
 # 15.times do
 #   Mantelzorger.create(
