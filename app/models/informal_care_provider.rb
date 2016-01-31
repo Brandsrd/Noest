@@ -1,7 +1,7 @@
 class InformalCareProvider < ActiveRecord::Base
 
 #associations
-# belongs_to :senior
+belongs_to :senior
 # has_many :seniors, through: :appointments
 
 #validations

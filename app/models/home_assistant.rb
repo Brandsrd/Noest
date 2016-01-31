@@ -2,6 +2,7 @@ class HomeAssistant < ActiveRecord::Base
 
 #associations
   has_many :appointments
+  has_many :seniors, through: :appointments
 
 #validations
   validates :first_name, presence: true, length: { minimum: 2 }

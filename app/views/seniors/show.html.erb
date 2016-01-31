@@ -10,5 +10,10 @@
   <%= @senior.last_name %>
 </p>
 
+<p>
+  <strong>Informal care provider:</strong>
+  <%= @senior.informal_care_provider.first_name %>
+</p>
+
 <%= link_to 'Edit', edit_senior_path(@senior) %> |
 <%= link_to 'Back', seniors_path %>

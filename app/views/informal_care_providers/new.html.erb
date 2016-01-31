@@ -1,0 +1,13 @@
+<%= form_for [@senior, @informal_care_provider ] do |f| %>
+  <%= f.text_field :first_name %>
+  <%= f.label "add a first name" %>
+  <%= f.text_field :last_name %>
+  <%= f.label "add a last name" %>
+  <%= f.text_field :email %>
+  <%= f.label "add a email" %>
+  <%= f.text_field :password %>
+  <%= f.label "add a password" %>
+  <%= f.text_field :address %>
+  <%= f.label "add a address" %>
+  <%= f.submit "submit" %>
+<% end %>

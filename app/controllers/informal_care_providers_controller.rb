@@ -1,4 +1,5 @@
 class InformalCareProvidersController < ApplicationController
+before_action :find_senior
 before_action :set_informal_care_provider, only: [:show, :edit, :update, :destroy]
 
 
@@ -23,15 +24,15 @@ def index
   # POST /informal_care_provider
   # POST /informal_care_provider.json
   def create
-    @informal_care_provider = InformalCareProvider.new(informal_care_provider_params)
+    @informal_care_provider = @senior.informal_care_providers.build(informal_care_provider_params)
 
     respond_to do |format|
       if @informal_care_provider.save
-        format.html { redirect_to @informal_care_provider, notice: 'informal_care_provider was successfully created.' }
+        format.html { redirect_to @informal_care_providers, notice: 'informal_care_provider was successfully created.' }
         format.json { render :show, status: :created, location: @informal_care_provider }
       else
         format.html { render :new }
-        format.json { render json: @informal_care_provider.errors, status: :unprocessable_entity }
+        format.json { render json: @informal_care_providers.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -64,12 +65,16 @@ def index
 
 private
     # Use callbacks to share common setup or constraints between actions.
-    def set_informal_care_provider
-      @informal_care_provider = InformalCareProvider.find(params[:id])
-    end
+    # def set_informal_care_provider
+    #   @informal_care_provider = InformalCareProvider.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def informal_care_provider_params
       params.require(:informal_care_provider).permit(:first_name, :last_name, :email, :password, :address)
     end
+
+     def find_senior
+    @senior = Senior.find(params[:senior_id])
+  end
 end
