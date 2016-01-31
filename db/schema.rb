@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20151211122051) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "date_of_birth"
-    t.string   "adress"
+    t.string   "address"
     t.string   "telephone_number"
     t.string   "drivers_license"
     t.string   "passport"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20151211122051) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password"
-    t.text     "adress"
+    t.text     "address"
     t.integer  "senior_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

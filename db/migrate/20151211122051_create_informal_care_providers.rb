@@ -5,7 +5,7 @@ class CreateInformalCareProviders < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.string :password
-      t.text :adress
+      t.text :address
       t.references :senior, index: true, foreign_key: true
 
       t.timestamps null: false

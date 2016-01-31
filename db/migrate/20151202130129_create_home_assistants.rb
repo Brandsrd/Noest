@@ -4,7 +4,7 @@ class CreateHomeAssistants < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :date_of_birth
-      t.string :adress
+      t.string :address
       t.string :telephone_number
       t.string :drivers_license
       t.string :passport

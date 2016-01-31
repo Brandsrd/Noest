@@ -69,6 +69,6 @@ class SeniorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def senior_params
-      params.require(:senior).permit(:naam, :achternaam)
+      params.require(:senior).permit(:first_name, :last_name, :email, :address)
     end
 end

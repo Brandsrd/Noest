@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Informal Care Providers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @informal_care_providers.each do |informal_care_provider| %>
+      <tr>
+        <td><%= informal_care_provider.first_name %></td>
+        <td><%= informal_care_provider.last_name %></td>
+        <td><%= informal_care_provider.email %></td>
+        <td><%= informal_care_provider.password %></td>
+        <td><%= informal_care_provider.address %></td>
+        <td><%= link_to 'Show', informal_care_provider %></td>
+        <td><%= link_to 'Edit', edit_informal_care_provider_path(informal_care_provider) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New informal_care_provider', new_informal_care_provider_path %>
