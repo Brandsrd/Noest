@@ -24,17 +24,17 @@ def index
   # POST /informal_care_provider
   # POST /informal_care_provider.json
   def create
-    @informal_care_provider = @senior.informal_care_providers.build(informal_care_provider_params)
-
-    respond_to do |format|
-      if @informal_care_provider.save
-        format.html { redirect_to @informal_care_providers, notice: 'informal_care_provider was successfully created.' }
-        format.json { render :show, status: :created, location: @informal_care_provider }
-      else
-        format.html { render :new }
-        format.json { render json: @informal_care_providers.errors, status: :unprocessable_entity }
-      end
-    end
+    @informal_care_provider = @senior.informal_care_providers.create(informal_care_provider_params)
+    redirect_to senior_path(@senior)
+    # # respond_to do |format|
+    # #   if @informal_care_provider.save
+    # #     format.html { redirect_to senior_path(@senior), notice: 'informal_care_provider was successfully created.' }
+    # #     format.json { render :show, status: :created, location: @informal_care_provider }
+    # #   else
+    # #     format.html { render :new }
+    # #     format.json { render json: @informal_care_providers.errors, status: :unprocessable_entity }
+    # #   end
+    # end
   end
 
   # PATCH/PUT /informal_care_provider/1

@@ -12,6 +12,10 @@ validates :email, presence: true, uniqueness: true
 # regex email validation later toevoegen in alle modellen?
 # ,format: { with: /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i }
 
+def full_name
+  first_name + ' ' + last_name
+end
+
 def to_s
 end
 
