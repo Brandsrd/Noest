@@ -1,0 +1,17 @@
+<%= form_for(@home_assistant) do |f| %>
+  <% if @home_assistant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@home_assistant.errors.count, "error") %> prohibited this home_assistant from being saved:</h2>
+
+      <ul>
+      <% @home_assistant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

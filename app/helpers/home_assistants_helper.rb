@@ -1,0 +1,2 @@
+module HomeAssistantsHelper
+end
