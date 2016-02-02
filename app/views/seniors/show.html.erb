@@ -2,12 +2,7 @@
 
 <p>
   <strong>Naam:</strong>
-  <%= @senior.first_name %>
-</p>
-
-<p>
-  <strong>Achternaam:</strong>
-  <%= @senior.last_name %>
+  <%= @senior.full_name %>
 </p>
 
 <p>
@@ -20,41 +15,19 @@
   <%= @senior.address %>
 </p>
 
-
-<h2>Informal Care Providers of <%= @senior.full_name %> </h2>
-<% @senior.informal_care_providers.each do |icp| %>
-  <p>
-    <b>Informal Care Provider:</b>
-    <%= icp.full_name %>
-  </p>
-<% end %>
+<p>
+  <strong>Informal Care Providers of <%= @senior.full_name %>: </strong>
+  <%= render @senior.informal_care_providers %>
+</p>
 
 <h2>Add an Informal Care Provider:</h2>
-<%= form_for([@senior, @senior.informal_care_providers.build]) do |f| %>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_area :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_area :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_area :password %>
-  </div>
-   <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_area :address %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<p>
+  <%= render "/informal_care_providers/form" %>
+</p>
+
+
+
+
 
 <%= link_to 'Edit', edit_senior_path(@senior) %> |
 <%= link_to 'Back', seniors_path %>
