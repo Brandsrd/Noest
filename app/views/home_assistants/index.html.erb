@@ -12,6 +12,10 @@
   <tbody>
     <% @home_assistants.each do |home_assistant| %>
       <tr>
+      <td><%= home_assistant.first_name %></td>
+      <td><%= home_assistant.last_name %></td>
+      <td><%= home_assistant.email %></td>
+      <td><%= home_assistant.address %></td>
         <td><%= link_to 'Show', home_assistant %></td>
         <td><%= link_to 'Edit', edit_home_assistant_path(home_assistant) %></td>
         <td><%= link_to 'Destroy', home_assistant, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -3,7 +3,7 @@ class CreateHomeAssistants < ActiveRecord::Migration
     create_table :home_assistants do |t|
       t.string :first_name
       t.string :last_name
-      t.string :date_of_birth
+      t.string :email
       t.string :address
       t.string :telephone_number
       t.string :drivers_license
@@ -12,6 +12,7 @@ class CreateHomeAssistants < ActiveRecord::Migration
       t.string :certifications
       t.string :specialties
       t.string :availability
+      t.string :date_of_birth
 
       t.timestamps null: false
     end

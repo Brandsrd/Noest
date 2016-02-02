@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   get 'pages/home'
 
   resources :seniors do
-    resources :informal_care_providers, only: [:new, :create]
+    resources :informal_care_providers, only: [:new, :create, :index]
   end
+
+  resources :home_assistants
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

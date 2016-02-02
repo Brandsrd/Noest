@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20151211122051) do
   create_table "home_assistants", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "date_of_birth"
+    t.string   "email"
     t.string   "address"
     t.string   "telephone_number"
     t.string   "drivers_license"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20151211122051) do
     t.string   "certifications"
     t.string   "specialties"
     t.string   "availability"
+    t.string   "date_of_birth"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
