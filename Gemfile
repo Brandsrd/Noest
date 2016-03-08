@@ -49,5 +49,7 @@ group :development, :test do
   # error processing in web browser
   gem "binding_of_caller"
   # for better error? see le wagon slides rails intro 1
+  gem 'rubocop', require: false
+  # check code and style
 end
 

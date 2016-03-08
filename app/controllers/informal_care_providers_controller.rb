@@ -74,7 +74,7 @@ private
       params.require(:informal_care_provider).permit(:first_name, :last_name, :email, :password, :address)
     end
 
-     def find_senior
+    def find_senior
     @senior = Senior.find(params[:senior_id])
-  end
+    end
 end
